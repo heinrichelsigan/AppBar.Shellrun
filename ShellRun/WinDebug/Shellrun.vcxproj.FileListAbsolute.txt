@@ -1,0 +1,2 @@
+C:\Users\heinr\source\ShellRun\shellsave\WinDebug\ShellRun.exe
+C:\Users\heinr\source\repos\AppBar\ShellRun\WinDebug\ShellRun.exe

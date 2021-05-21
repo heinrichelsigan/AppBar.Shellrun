@@ -1,0 +1,18 @@
+Starting Software\Richter...
+	Size            = 	48.000000
+	Autohide        = 	false
+	AlwaysOnTop     = 	true
+	Float.Height    = 	55
+	Float.Width     = 	688
+	Float.top       = 	0
+	Float.left      = 	0
+	Float.right     = 	688
+	Float.bottom    = 	55
+	DimDock[TOP]    = 	55
+	DimDock[LEFT]   = 	344
+	DimDock[RIGHT]  = 	344
+	DimDock[BOTTOM] = 	55
+	uState          = 	BOTTOM  3
+On Changing 1:
+1680 x 55
+( 0 , 955 , 1680 , 1010 )
