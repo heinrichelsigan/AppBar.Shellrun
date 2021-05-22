@@ -768,22 +768,12 @@ void CAppBar::OnTimer(UINT nIDEvent) {
 
     CRect rcZen;
 	GetWindowRect(&rcZen);   
+
 	if ((buf_x != rcZen.left) || (buf_y != rcZen.top)) {
 		buf_x=rcZen.left;
 		buf_y=rcZen.top;
-		FILE *fp;
-		fp = fopen("shell.txt","a");
-		if (fp == NULL) {
-		} else {
-			buf_count++;
-			(void) fprintf(fp,"On Changing %d:\n",buf_count);
-			(void) fprintf(fp,"%d x %d\n",rcZen.Width(), rcZen.Height());
-			(void) fprintf(fp,"( %d , %d ",rcZen.left,rcZen.top);
-			(void) fprintf(fp,", %d , %d )\n",rcZen.right,rcZen.bottom);
-			(void) fclose(fp);
-		}
+		buf_count++;
 	}
-
 
    CDialog::OnTimer(nIDEvent);
 }

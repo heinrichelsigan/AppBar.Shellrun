@@ -1,6 +1,6 @@
  Shellrun
 
- Timestamp is 60a82584 (Fri May 21 23:26:28 2021)
+ Timestamp is 60a8854c (Sat May 22 06:15:08 2021)
 
  Preferred load address is 00400000
 
@@ -59,48 +59,57 @@
 
   Address         Publics by Value              Rva+Base       Lib:Object
 
- 0000:00000000       ___hybrid_code_map_count   00000000     <absolute>
- 0000:00000000       ___guard_iat_table         00000000     <absolute>
- 0000:00000000       ___guard_check_icall_a64n_fptr 00000000     <absolute>
- 0000:00000000       ___guard_longjmp_count     00000000     <absolute>
- 0000:00000000       ___volatile_metadata       00000000     <absolute>
- 0000:00000000       ___guard_eh_cont_count     00000000     <absolute>
- 0000:00000000       ___x64_code_ranges_to_entry_points 00000000     <absolute>
- 0000:00000000       ___arm64x_extra_rfe_table  00000000     <absolute>
- 0000:00000000       ___guard_fids_count        00000000     <absolute>
- 0000:00000000       ___arm64x_extra_rfe_table_size 00000000     <absolute>
- 0000:00000000       ___hybrid_auxiliary_iat_copy 00000000     <absolute>
- 0000:00000000       ___guard_longjmp_table     00000000     <absolute>
- 0000:00000000       ___arm64x_native_entrypoint 00000000     <absolute>
- 0000:00000000       ___enclave_config          00000000     <absolute>
- 0000:00000000       ___guard_fids_table        00000000     <absolute>
- 0000:00000000       ___arm64x_redirection_metadata_count 00000000     <absolute>
- 0000:00000000       ___hybrid_auxiliary_iat    00000000     <absolute>
- 0000:00000000       ___arm64x_redirection_metadata 00000000     <absolute>
- 0000:00000000       ___AbsoluteZero            00000000     <absolute>
- 0000:00000000       ___x64_code_ranges_to_entry_points_count 00000000     <absolute>
- 0000:00000000       ___guard_eh_cont_table     00000000     <absolute>
  0000:00000000       ___dynamic_value_reloc_table 00000000     <absolute>
+ 0000:00000000       ___enclave_config          00000000     <absolute>
+ 0000:00000000       ___guard_eh_cont_count     00000000     <absolute>
  0000:00000000       ___guard_iat_count         00000000     <absolute>
+ 0000:00000000       ___arm64x_extra_rfe_table_size 00000000     <absolute>
+ 0000:00000000       ___arm64x_native_entrypoint 00000000     <absolute>
+ 0000:00000000       ___guard_fids_table        00000000     <absolute>
+ 0000:00000000       ___AbsoluteZero            00000000     <absolute>
+ 0000:00000000       ___guard_longjmp_count     00000000     <absolute>
+ 0000:00000000       ___guard_eh_cont_table     00000000     <absolute>
+ 0000:00000000       ___hybrid_auxiliary_iat_copy 00000000     <absolute>
+ 0000:00000000       ___arm64x_redirection_metadata 00000000     <absolute>
+ 0000:00000000       ___guard_fids_count        00000000     <absolute>
+ 0000:00000000       ___arm64x_extra_rfe_table  00000000     <absolute>
  0000:00000000       ___hybrid_code_map         00000000     <absolute>
+ 0000:00000000       ___x64_code_ranges_to_entry_points_count 00000000     <absolute>
+ 0000:00000000       ___volatile_metadata       00000000     <absolute>
+ 0000:00000000       ___hybrid_code_map_count   00000000     <absolute>
+ 0000:00000000       ___hybrid_auxiliary_iat    00000000     <absolute>
+ 0000:00000000       ___guard_longjmp_table     00000000     <absolute>
+ 0000:00000000       ___x64_code_ranges_to_entry_points 00000000     <absolute>
+ 0000:00000000       ___guard_check_icall_a64n_fptr 00000000     <absolute>
+ 0000:00000000       ___arm64x_redirection_metadata_count 00000000     <absolute>
+ 0000:00000000       ___guard_iat_table         00000000     <absolute>
  0000:00000012       ___safe_se_handler_count   00000012     <absolute>
  0000:0000002c       __tls_array                0000002c     <absolute>
  0000:00000100       ___guard_flags             00000100     <absolute>
  0000:00000000       ___ImageBase               00400000     <linker-defined>
  0001:00003b90       ?OnCreate@CAppBar@@IAEHPAUtagCREATESTRUCTA@@@Z 00404b90 f   AppBar.obj
+ 0001:00003bf2       ?Append@?$CSimpleStringT@D$00@ATL@@QAEXABV12@@Z 00404bf2 f   mfc140d:mfc140d.dll
+ 0001:00003bf8       ?Append@?$CSimpleStringT@D$00@ATL@@QAEXPBD@Z 00404bf8 f   mfc140d:mfc140d.dll
  0001:00003c10       ?OnDestroy@CAppBar@@IAEXXZ 00404c10 f   AppBar.obj
  0001:00003c50       ?OnWindowPosChanged@CAppBar@@IAEXPAUtagWINDOWPOS@@@Z 00404c50 f   AppBar.obj
  0001:00003c90       ?OnActivate@CAppBar@@IAEXIPAVCWnd@@H@Z 00404c90 f   AppBar.obj
  0001:00003cf0       ?OnNcMouseMove@CAppBar@@IAEXIVCPoint@@@Z 00404cf0 f   AppBar.obj
  0001:00003d30       ?OnTimer@CAppBar@@IAEXI@Z  00404d30 f   AppBar.obj
+ 0001:00003e20       __vswprintf_s_l            00404e20 f i AppBar.obj
+ 0001:00003e80       ?IsEdgeLeftOrRight@CAppBar@@SGHI@Z 00404e80 f i SRBar.obj
+ 0001:00003ec0       __vsnprintf_l              00404ec0 f i SRBar.obj
  0001:00003f20       ?OnAppBarCallbackMsg@CAppBar@@IAEJIJ@Z 00404f20 f   AppBar.obj
+ 0001:00004030       _fprintf                   00405030 f i SRBar.obj
  0001:00004070       ?OnEnterSizeMove@CAppBar@@IAEJIJ@Z 00405070 f   AppBar.obj
  0001:000040b0       ?OnExitSizeMove@CAppBar@@IAEJIJ@Z 004050b0 f   AppBar.obj
+ 0001:000041b0       _sprintf                   004051b0 f i SRBar.obj
  0001:000041f0       ?OnSizing@CAppBar@@IAEJIJ@Z 004051f0 f   AppBar.obj
+ 0001:000043f0       __vsprintf_l               004053f0 f i SRBar.obj
  0001:00004470       ?OnMoving@CAppBar@@IAEJIJ@Z 00405470 f   AppBar.obj
  0001:000045b0       ??0?$CTraceCategoryEx@$0CAAA@$0A@@ATL@@QAE@PBD@Z 004055b0 f i AppBar.obj
  0001:000045e0       ??0APPBARSTATE@CAppBar@@QAE@XZ 004055e0 f i AppBar.obj
  0001:00004610       ??0CAppBar@@QAE@IPAVCWnd@@@Z 00405610 f   AppBar.obj
+ 0001:000047c0       ?GetState@CAppBar@@QAEXPAUAPPBARSTATE@1@@Z 004057c0 f i SRBar.obj
  0001:00004820       ??0CPoint@@QAE@HH@Z        00405820 f i AppBar.obj
  0001:00004860       ??0CPoint@@QAE@J@Z         00405860 f i AppBar.obj
  0001:000048b0       ??0CPoint@@QAE@UtagSIZE@@@Z 004058b0 f i AppBar.obj
@@ -144,6 +153,7 @@
  0001:00005a50       ?SetRectEmpty@CRect@@QAEXXZ 00406a50 f i AppBar.obj
  0001:00005a80       ?SetState@CAppBar@@QAEXAAUAPPBARSTATE@1@@Z 00406a80 f   AppBar.obj
  0001:00005b10       ?SetState@CAppBar@@QAEXI@Z 00406b10 f   AppBar.obj
+ 0001:00005d40       ?OnCancel@CSRBar@@MAEXXZ   00406d40 f   SRBar.obj
  0001:00005dc0       ?SetState@CAppBar@@QAEXXZ  00406dc0 f i AppBar.obj
  0001:00005df0       ?ShowHiddenAppBar@CAppBar@@IAEXH@Z 00406df0 f   AppBar.obj
  0001:00005e90       ?SlideWindow@CAppBar@@IAEXABVCRect@@@Z 00406e90 f   AppBar.obj
@@ -152,15 +162,12 @@
  0001:000060f0       ?__global_delete@@YAXPAXI@Z 004070f0 f i AppBar.obj
  0001:000060f0       ?__empty_global_delete@@YAXPAXI@Z 004070f0 f i AppBar.obj
  0001:00006110       ___local_stdio_printf_options 00407110 f i AppBar.obj
- 0001:00006130       __vfprintf_l               00407130 f i AppBar.obj
- 0001:00006180       __vswprintf_s_l            00407180 f i AppBar.obj
- 0001:000061f0       _fprintf                   004071f0 f i AppBar.obj
- 0001:00006240       _swprintf_s                00407240 f i AppBar.obj
+ 0001:00006180       _swprintf_s                00407180 f i AppBar.obj
  0001:00006290       ??0CShellRunApp@@QAE@XZ    00407290 f   ShellRun.obj
  0001:000062d0       ??1CSRBar@@UAE@XZ          004072d0 f i ShellRun.obj
  0001:00006320       ??1CShellRunApp@@UAE@XZ    00407320 f i ShellRun.obj
- 0001:00006350       ??_GCShellRunApp@@UAEPAXI@Z 00407350 f i ShellRun.obj
  0001:00006350       ??_ECShellRunApp@@UAEPAXI@Z 00407350 f i ShellRun.obj
+ 0001:00006350       ??_GCShellRunApp@@UAEPAXI@Z 00407350 f i ShellRun.obj
  0001:000063b0       ?GetApplicationRecoveryParameter@CWinApp@@UAEPAXXZ 004073b0 f i ShellRun.obj
  0001:000063d0       ?GetApplicationRecoveryPingInterval@CWinApp@@UAEKXZ 004073d0 f i ShellRun.obj
  0001:000063f0       ?GetApplicationRestartFlags@CWinApp@@UAEKXZ 004073f0 f i ShellRun.obj
@@ -182,32 +189,28 @@
  0001:00006af0       ?OnAutoHide@CSRBar@@QAEXXZ 00407af0 f   SRBar.obj
  0001:00006b20       ?OnAboutApp@CSRBar@@QAEXXZ 00407b20 f   SRBar.obj
  0001:00006b50       ?OnExecute@CSRBar@@QAEXXZ  00407b50 f   SRBar.obj
+ 0001:00006be0       ??_ECSRBar@@UAEPAXI@Z      00407be0 f i SRBar.obj
+ 0001:00006be0       ??_GCSRBar@@UAEPAXI@Z      00407be0 f i SRBar.obj
  0001:00006ce0       ??0?$CTraceCategoryEx@$0CAAAA@$0A@@ATL@@QAE@PBD@Z 00407ce0 f i SRBar.obj
- 0001:00006d10       ??0CSRBar@@QAE@PAVCWnd@@@Z 00407d10 f   SRBar.obj
- 0001:00006e30       ??_ECSRBar@@UAEPAXI@Z      00407e30 f i SRBar.obj
- 0001:00006e30       ??_GCSRBar@@UAEPAXI@Z      00407e30 f i SRBar.obj
+ 0001:00006d40       ?OnAboutUrl@CSRBar@@QAGXXZ 00407d40 f   SRBar.obj
  0001:00006e90       ?DoDataExchange@CSRBar@@MAEXPAVCDataExchange@@@Z 00407e90 f   SRBar.obj
- 0001:00006f00       ?FileWritePrefereces@CSRBar@@IAEHAAUAPPBARSTATE@CAppBar@@@Z 00407f00 f   SRBar.obj
- 0001:000072e0       ?GetMessageMap@CSRBar@@MBEPBUAFX_MSGMAP@@XZ 004082e0 f   SRBar.obj
- 0001:00007300       ?GetState@CAppBar@@QAEXPAUAPPBARSTATE@1@@Z 00408300 f i SRBar.obj
- 0001:00007360       ?GetThisMessageMap@CSRBar@@KGPBUAFX_MSGMAP@@XZ 00408360 f   SRBar.obj
- 0001:00007380       ?HelpUrl@@YGXXZ            00408380 f   SRBar.obj
- 0001:00007500       ?HideFloatAdornments@CSRBar@@IAEXH@Z 00408500 f   SRBar.obj
- 0001:00007550       ?IsBarAlwaysOnTop@CAppBar@@QAEHXZ 00408550 f i SRBar.obj
- 0001:00007580       ?IsEdgeLeftOrRight@CAppBar@@SGHI@Z 00408580 f i SRBar.obj
- 0001:000075c0       ?IsEdgeTopOrBottom@CAppBar@@SGHI@Z 004085c0 f i SRBar.obj
- 0001:00007600       ?OnAboutUrl@CSRBar@@QAGXXZ 00408600 f   SRBar.obj
- 0001:00007640       ?OnAppBarStateChange@CSRBar@@MAEXHI@Z 00408640 f   SRBar.obj
- 0001:00007690       ?OnAppbarAboutAppBar@CSRBar@@IAEXXZ 00408690 f   SRBar.obj
- 0001:00007740       ?OnAppbarAlwaysOnTop@CSRBar@@IAEXXZ 00408740 f   SRBar.obj
- 0001:000077d0       ?OnAppbarAutohide@CSRBar@@IAEXXZ 004087d0 f   SRBar.obj
- 0001:00007860       ?OnCancel@CSRBar@@MAEXXZ   00408860 f   SRBar.obj
- 0001:000078f0       ?OnHelpUrl@@YGXPAUtagHELPINFO@@@Z 004088f0 f   SRBar.obj
- 0001:00007a70       ?OnInitDialog@CSRBar@@MAEHXZ 00408a70 f   SRBar.obj
- 0001:00007d10       ?OnShellExecuteCommand@CSRBar@@QAEXV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@@Z 00408d10 f   SRBar.obj
- 0001:00007e60       ?OnShellExecuteUrl@CSRBar@@QAGXPAUtagHELPINFO@@@Z 00408e60 f   SRBar.obj
- 0001:00007ea0       ?RegistryCreateKeyEx@CSRBar@@IAEJAAUAPPBARSTATE@CAppBar@@@Z 00408ea0 f   SRBar.obj
- 0001:00007f80       ?RegistryOpenKeyEx@CSRBar@@IAEJAAUAPPBARSTATE@CAppBar@@@Z 00408f80 f   SRBar.obj
+ 0001:00006f00       ?GetMessageMap@CSRBar@@MBEPBUAFX_MSGMAP@@XZ 00407f00 f   SRBar.obj
+ 0001:00006f50       ?OnShellExecuteCommand@CSRBar@@QAEXV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@@Z 00407f50 f   SRBar.obj
+ 0001:00007170       ?OnShellExecuteUrl@CSRBar@@QAGXPAUtagHELPINFO@@@Z 00408170 f   SRBar.obj
+ 0001:00007300       ?GetThisMessageMap@CSRBar@@KGPBUAFX_MSGMAP@@XZ 00408300 f   SRBar.obj
+ 0001:00007380       ?HideFloatAdornments@CSRBar@@IAEXH@Z 00408380 f   SRBar.obj
+ 0001:000073c0       ?OnHelpUrl@@YGXPAUtagHELPINFO@@@Z 004083c0 f   SRBar.obj
+ 0001:00007500       ?IsBarAlwaysOnTop@CAppBar@@QAEHXZ 00408500 f i SRBar.obj
+ 0001:00007580       ?IsEdgeTopOrBottom@CAppBar@@SGHI@Z 00408580 f i SRBar.obj
+ 0001:00007690       ?OnAppBarStateChange@CSRBar@@MAEXHI@Z 00408690 f   SRBar.obj
+ 0001:00007740       ?OnAppbarAboutAppBar@CSRBar@@IAEXXZ 00408740 f   SRBar.obj
+ 0001:000077d0       ?OnAppbarAlwaysOnTop@CSRBar@@IAEXXZ 004087d0 f   SRBar.obj
+ 0001:00007860       ?OnAppbarAutohide@CSRBar@@IAEXXZ 00408860 f   SRBar.obj
+ 0001:00007960       ?RegistryOpenKeyEx@CSRBar@@IAEJAAUAPPBARSTATE@CAppBar@@@Z 00408960 f   SRBar.obj
+ 0001:00007af0       __vfprintf_l               00408af0 f i SRBar.obj
+ 0001:00007b90       ??0CSRBar@@QAE@PAVCWnd@@@Z 00408b90 f   SRBar.obj
+ 0001:00007e40       ?HelpUrl@@YGXXZ            00408e40 f   SRBar.obj
+ 0001:00007f80       ?RegistryCreateKeyEx@CSRBar@@IAEJAAUAPPBARSTATE@CAppBar@@@Z 00408f80 f   SRBar.obj
  0001:00008040       ?_AfxInitManaged@@YAHXZ    00409040 f i StdAfx.obj
  0001:00008060       ??$AtlAdd@H@ATL@@YGJPAHHH@Z 00409060 f i StdAfx.obj
  0001:000080b0       ??$AtlAdd@I@ATL@@YGJPAIII@Z 004090b0 f i StdAfx.obj
@@ -840,19 +843,22 @@
  0001:00010510       ___vcrt_thread_attach      00411510 f   msvcrtd:ucrt_stubs.obj
  0001:00010510       ___acrt_thread_attach      00411510 f   msvcrtd:ucrt_stubs.obj
  0001:00010510       ___scrt_stub_for_acrt_thread_attach 00411510 f   msvcrtd:ucrt_stubs.obj
- 0001:00010520       ___vcrt_thread_detach      00411520 f   msvcrtd:ucrt_stubs.obj
  0001:00010520       ___acrt_thread_detach      00411520 f   msvcrtd:ucrt_stubs.obj
  0001:00010520       ___scrt_stub_for_acrt_thread_detach 00411520 f   msvcrtd:ucrt_stubs.obj
- 0001:00010530       ___vcrt_uninitialize       00411530 f   msvcrtd:ucrt_stubs.obj
- 0001:00010530       ___acrt_uninitialize       00411530 f   msvcrtd:ucrt_stubs.obj
+ 0001:00010520       ___vcrt_thread_detach      00411520 f   msvcrtd:ucrt_stubs.obj
  0001:00010530       ___scrt_stub_for_acrt_uninitialize 00411530 f   msvcrtd:ucrt_stubs.obj
- 0001:00010540       ___acrt_uninitialize_critical 00411540 f   msvcrtd:ucrt_stubs.obj
+ 0001:00010530       ___acrt_uninitialize       00411530 f   msvcrtd:ucrt_stubs.obj
+ 0001:00010530       ___vcrt_uninitialize       00411530 f   msvcrtd:ucrt_stubs.obj
  0001:00010540       ___scrt_stub_for_acrt_uninitialize_critical 00411540 f   msvcrtd:ucrt_stubs.obj
  0001:00010540       ___vcrt_uninitialize_critical 00411540 f   msvcrtd:ucrt_stubs.obj
- 0001:00010550       ___scrt_stub_for_is_c_termination_complete 00411550 f   msvcrtd:ucrt_stubs.obj
+ 0001:00010540       ___acrt_uninitialize_critical 00411540 f   msvcrtd:ucrt_stubs.obj
  0001:00010550       __is_c_termination_complete 00411550 f   msvcrtd:ucrt_stubs.obj
+ 0001:00010550       ___scrt_stub_for_is_c_termination_complete 00411550 f   msvcrtd:ucrt_stubs.obj
  0001:00010560       __filter_x86_sse2_floating_point_exception_default 00411560 f   msvcrtd:x86_exception_filter.obj
  0001:00010560       __filter_x86_sse2_floating_point_exception 00411560 f   msvcrtd:x86_exception_filter.obj
+ 0001:000106a0       ?LogToFile@CSRBar@@IAEHQBD00@Z 004116a0 f   SRBar.obj
+ 0001:00010760       ?OnInitDialog@CSRBar@@MAEHXZ 00411760 f   SRBar.obj
+ 0001:00010a70       ?LogAppStateToFile@CSRBar@@IAEHAAUAPPBARSTATE@CAppBar@@QBD1@Z 00411a70 f   SRBar.obj
  0001:00013150       ??__FstrHeap@?1??GetInstance@CAtlStringMgr@ATL@@SGPAUIAtlStringMgr@2@XZ@YAXXZ 00414150 f i StdAfx.obj
  0001:00013170       ??__FstrMgr@?1??GetInstance@CAtlStringMgr@ATL@@SGPAUIAtlStringMgr@2@XZ@YAXXZ 00414170 f i StdAfx.obj
  0001:000131d0       ??__FstrHeap@?1??GetInstance@CAtlStringMgr@ATL@@SAPAUIAtlStringMgr@2@XZ@YAXXZ 004141d0 f i mfcs140d:nolib.obj
@@ -867,57 +873,54 @@
  0002:00000bc0       ___xp_z                    00416bc0     msvcrtd:initializers.obj
  0002:00000cc4       ___xt_a                    00416cc4     msvcrtd:initializers.obj
  0002:00000dc8       ___xt_z                    00416dc8     msvcrtd:initializers.obj
+ 0002:00000ff8       ??_C@_0DD@LMEMJPDG@Shell?5Run?5Version?51?40?4?6Written?5@ 00416ff8     SRBar.obj
  0002:00001034       ??_C@_17CNPHIMPH@?$AA?$CF?$AAl?$AAs@ 00417034     AppBar.obj
  0002:00001040       ??_C@_0BC@PGMFNIFA@atlTraceException@ 00417040     AppBar.obj
  0002:00001058       ??_C@_17LGGGMOOB@?$AA?$CF?$AAh?$AAs@ 00417058     AppBar.obj
  0002:00001068       ??_C@_1EO@EBPPKGOM@?$AAf?$AAa?$AAl?$AAs?$AAe?$AA?5?$AA?$CG?$AA?$CG?$AA?5?$AA?$CC?$AAT?$AAo?$AAo?$AA?5?$AAm@ 00417068     AppBar.obj
  0002:000010c8       ??_C@_1OE@CLPLEMJN@?$AAC?$AA?3?$AA?2?$AAP?$AAr?$AAo?$AAg?$AAr?$AAa?$AAm?$AA?5?$AAF?$AAi?$AAl?$AAe@ 004170c8     AppBar.obj
+ 0002:000011b8       ??_C@_0BA@FBBDNLPB@Starting?5?$CFs?4?4?4?6@ 004171b8     SRBar.obj
  0002:000011e0       ??_7CAppBar@@6B@           004171e0     AppBar.obj
+ 0002:0000138c       ??_C@_0CA@FOHLBJJG@?7uState?5?5?5?5?5?5?5?5?5?5?$DN?5?7ASSERT?5?5?$CFd?6@ 0041738c     SRBar.obj
+ 0002:000013b4       ??_C@_0CJ@JINJCEN@https?3?1?1www?4linkedin?4com?1in?1jef@ 004173b4     SRBar.obj
  0002:000013e8       ??_C@_0GK@EPBCIPJ@There?5is?5already?5an?5auto?5hidden@ 004173e8     AppBar.obj
  0002:00001468       ??_C@_0N@GAJHMOMD@AppBarNotify@ 00417468     AppBar.obj
- 0002:00001478       ??_C@_01MCMALHOG@a@        00417478     AppBar.obj
- 0002:0000147c       ??_C@_09MGIGOOHF@shell?4txt@ 0041747c     AppBar.obj
- 0002:00001488       ??_C@_0BB@MFPOPOFP@On?5Changing?5?$CFd?3?6@ 00417488     AppBar.obj
- 0002:0000149c       ??_C@_08EOOBMPLC@?$CFd?5x?5?$CFd?6@ 0041749c     AppBar.obj
- 0002:000014a8       ??_C@_0L@EIBJIBHL@?$CI?5?$CFd?5?0?5?$CFd?5@ 004174a8     AppBar.obj
- 0002:000014b8       ??_C@_0N@FLLOKEOB@?0?5?$CFd?5?0?5?$CFd?5?$CJ?6@ 004174b8     AppBar.obj
+ 0002:00001478       ??_C@_0BG@KOEBIFPA@?$CC?5failed?5to?5execute?$CB?6@ 00417478     SRBar.obj
+ 0002:00001490       ??_C@_0CN@FBJJAOOF@Error?5opening?5file?5?8?$CFs?8?5for?5ope@ 00417490     SRBar.obj
  0002:00001510       ??_7CShellRunApp@@6B@      00417510     ShellRun.obj
+ 0002:00001628       ??_C@_0BI@IACDPFNE@?7Size?5?5?5?5?5?5?5?5?5?5?5?5?$DN?5?7?$CFf?6@ 00417628     SRBar.obj
+ 0002:00001640       ??_C@_0CA@GGIDEJFF@?7uState?5?5?5?5?5?5?5?5?5?5?$DN?5?7UNKNOWN?5?$CFd?6@ 00417640     SRBar.obj
  0002:00001660       ?m_szAppName@CSRBar@@1QBDB 00417660     SRBar.obj
- 0002:0000166c       ?m_szRegSubkey@CSRBar@@1QBDB 0041766c     SRBar.obj
+ 0002:00001670       ?m_szRegSubkey@CSRBar@@1QBDB 00417670     SRBar.obj
+ 0002:00001684       ?m_szAppLogFile@CSRBar@@1QBDB 00417684     SRBar.obj
  0002:000017b0       ??_C@_0P@MBNHGHMI@atlTraceString@ 004177b0     SRBar.obj
  0002:000017c8       ??_7CSRBar@@6B@            004177c8     SRBar.obj
- 0002:000019cc       ??_C@_0DE@IDNOEMLP@Failed?5to?5store?5preferences?5in?5@ 004179cc     SRBar.obj
- 0002:00001a0c       ??_C@_0DD@ECHFLNOC@Failed?5to?5store?5preferences?5in?5@ 00417a0c     SRBar.obj
- 0002:00001a4c       ??_C@_0DD@LMEMJPDG@Shell?5Run?5Version?51?40?4?6Written?5@ 00417a4c     SRBar.obj
- 0002:00001a8c       ??_C@_0BA@LCJKLLIA@About?5Shell?5Run@ 00417a8c     SRBar.obj
- 0002:00001aa0       ??_C@_0BO@KDOPOBBJ@Shell?5Run?5by?5Jeffrey?5Richters@ 00417aa0     SRBar.obj
- 0002:00001ac4       ??_C@_0BK@EJHLCOFL@Command?5failed?5to?5execute@ 00417ac4     SRBar.obj
- 0002:00001ae4       ??_C@_0CI@JAAPFLFF@https?3?1?1www?4linkedin?4com?1in?1jef@ 00417ae4     SRBar.obj
- 0002:00001b14       ??_C@_01NOFIACDB@w@        00417b14     SRBar.obj
- 0002:00001b18       ??_C@_0CK@CFGDCKBJ@File?5shell?4txt?5failed?5to?5open?5f@ 00417b18     SRBar.obj
- 0002:00001b4c       ??_C@_0BA@FBBDNLPB@Starting?5?$CFs?4?4?4?6@ 00417b4c     SRBar.obj
- 0002:00001b60       ??_C@_0BI@IACDPFNE@?7Size?5?5?5?5?5?5?5?5?5?5?5?5?$DN?5?7?$CFf?6@ 00417b60     SRBar.obj
- 0002:00001b7c       ??_C@_05LAPONLG@false@     00417b7c     SRBar.obj
- 0002:00001b84       ??_C@_04LOAJBDKD@true@     00417b84     SRBar.obj
- 0002:00001b8c       ??_C@_0BI@MCKLGCNC@?7Autohide?5?5?5?5?5?5?5?5?$DN?5?7?$CFs?6@ 00417b8c     SRBar.obj
- 0002:00001ba8       ??_C@_0BI@MCCEHPG@?7AlwaysOnTop?5?5?5?5?5?$DN?5?7?$CFs?6@ 00417ba8     SRBar.obj
- 0002:00001bc4       ??_C@_0BI@PFIKIMEC@?7Float?4Height?5?5?5?5?$DN?5?7?$CFd?6@ 00417bc4     SRBar.obj
- 0002:00001be0       ??_C@_0BI@FKNLPPOK@?7Float?4Width?5?5?5?5?5?$DN?5?7?$CFd?6@ 00417be0     SRBar.obj
- 0002:00001bfc       ??_C@_0BI@GDEEADBM@?7Float?4top?5?5?5?5?5?5?5?$DN?5?7?$CFd?6@ 00417bfc     SRBar.obj
- 0002:00001c18       ??_C@_0BI@DOIJGAOI@?7Float?4left?5?5?5?5?5?5?$DN?5?7?$CFd?6@ 00417c18     SRBar.obj
- 0002:00001c34       ??_C@_0BI@PDFBPJIF@?7Float?4right?5?5?5?5?5?$DN?5?7?$CFd?6@ 00417c34     SRBar.obj
- 0002:00001c50       ??_C@_0BI@FDMLPOAM@?7Float?4bottom?5?5?5?5?$DN?5?7?$CFd?6@ 00417c50     SRBar.obj
- 0002:00001c6c       ??_C@_0BI@MMGBIGIB@?7DimDock?$FLTOP?$FN?5?5?5?5?$DN?5?7?$CFd?6@ 00417c6c     SRBar.obj
- 0002:00001c88       ??_C@_0BI@CJEAFDLA@?7DimDock?$FLLEFT?$FN?5?5?5?$DN?5?7?$CFd?6@ 00417c88     SRBar.obj
- 0002:00001ca4       ??_C@_0BI@GNKAMPC@?7DimDock?$FLRIGHT?$FN?5?5?$DN?5?7?$CFd?6@ 00417ca4     SRBar.obj
- 0002:00001cc0       ??_C@_0BI@BBDAFEIH@?7DimDock?$FLBOTTOM?$FN?5?$DN?5?7?$CFd?6@ 00417cc0     SRBar.obj
- 0002:00001cdc       ??_C@_0CA@MBJGCNMG@?7uState?5?5?5?5?5?5?5?5?5?5?$DN?5?7BOTTOM?5?5?$CFd?6@ 00417cdc     SRBar.obj
- 0002:00001d04       ??_C@_0CA@GFLNMIEL@?7uState?5?5?5?5?5?5?5?5?5?5?$DN?5?7TOP?5?5?5?5?5?$CFd?6@ 00417d04     SRBar.obj
- 0002:00001d2c       ??_C@_0CA@KPJGILL@?7uState?5?5?5?5?5?5?5?5?5?5?$DN?5?7LEFT?5?5?5?5?$CFd?6@ 00417d2c     SRBar.obj
- 0002:00001d54       ??_C@_0CA@GIOGIBKP@?7uState?5?5?5?5?5?5?5?5?5?5?$DN?5?7RIGHT?5?5?5?$CFd?6@ 00417d54     SRBar.obj
- 0002:00001d7c       ??_C@_0CA@KJNLANMB@?7uState?5?5?5?5?5?5?5?5?5?5?$DN?5?7FLOAT?5?5?5?$CFd?6@ 00417d7c     SRBar.obj
- 0002:00001da4       ??_C@_0CA@GGIDEJFF@?7uState?5?5?5?5?5?5?5?5?5?5?$DN?5?7UNKNOWN?5?$CFd?6@ 00417da4     SRBar.obj
- 0002:00001dcc       ??_C@_0CA@FOHLBJJG@?7uState?5?5?5?5?5?5?5?5?5?5?$DN?5?7ASSERT?5?5?$CFd?6@ 00417dcc     SRBar.obj
+ 0002:000019cc       ??_C@_01MCMALHOG@a@        004179cc     SRBar.obj
+ 0002:00001a0c       ??_C@_0DE@IDNOEMLP@Failed?5to?5store?5preferences?5in?5@ 00417a0c     SRBar.obj
+ 0002:00001a4c       ??_C@_0DD@ECHFLNOC@Failed?5to?5store?5preferences?5in?5@ 00417a4c     SRBar.obj
+ 0002:00001aa0       ??_C@_0BA@LCJKLLIA@About?5Shell?5Run@ 00417aa0     SRBar.obj
+ 0002:00001ac4       ??_C@_0BO@KDOPOBBJ@Shell?5Run?5by?5Jeffrey?5Richters@ 00417ac4     SRBar.obj
+ 0002:00001ae4       ??_C@_0BK@EJHLCOFL@Command?5failed?5to?5execute@ 00417ae4     SRBar.obj
+ 0002:00001b18       ??_C@_09IFLMIIFH@Command?5?$CC@ 00417b18     SRBar.obj
+ 0002:00001b8c       ??_C@_05LAPONLG@false@     00417b8c     SRBar.obj
+ 0002:00001ba8       ??_C@_04LOAJBDKD@true@     00417ba8     SRBar.obj
+ 0002:00001bc4       ??_C@_0BI@MCKLGCNC@?7Autohide?5?5?5?5?5?5?5?5?$DN?5?7?$CFs?6@ 00417bc4     SRBar.obj
+ 0002:00001be0       ??_C@_0BI@MCCEHPG@?7AlwaysOnTop?5?5?5?5?5?$DN?5?7?$CFs?6@ 00417be0     SRBar.obj
+ 0002:00001bfc       ??_C@_0BI@PFIKIMEC@?7Float?4Height?5?5?5?5?$DN?5?7?$CFd?6@ 00417bfc     SRBar.obj
+ 0002:00001c18       ??_C@_0BI@FKNLPPOK@?7Float?4Width?5?5?5?5?5?$DN?5?7?$CFd?6@ 00417c18     SRBar.obj
+ 0002:00001c34       ??_C@_0BI@GDEEADBM@?7Float?4top?5?5?5?5?5?5?5?$DN?5?7?$CFd?6@ 00417c34     SRBar.obj
+ 0002:00001c50       ??_C@_0BI@DOIJGAOI@?7Float?4left?5?5?5?5?5?5?$DN?5?7?$CFd?6@ 00417c50     SRBar.obj
+ 0002:00001c6c       ??_C@_0BI@PDFBPJIF@?7Float?4right?5?5?5?5?5?$DN?5?7?$CFd?6@ 00417c6c     SRBar.obj
+ 0002:00001c88       ??_C@_0BI@FDMLPOAM@?7Float?4bottom?5?5?5?5?$DN?5?7?$CFd?6@ 00417c88     SRBar.obj
+ 0002:00001ca4       ??_C@_0BI@MMGBIGIB@?7DimDock?$FLTOP?$FN?5?5?5?5?$DN?5?7?$CFd?6@ 00417ca4     SRBar.obj
+ 0002:00001cc0       ??_C@_0BI@CJEAFDLA@?7DimDock?$FLLEFT?$FN?5?5?5?$DN?5?7?$CFd?6@ 00417cc0     SRBar.obj
+ 0002:00001cdc       ??_C@_0BI@GNKAMPC@?7DimDock?$FLRIGHT?$FN?5?5?$DN?5?7?$CFd?6@ 00417cdc     SRBar.obj
+ 0002:00001d04       ??_C@_0BI@BBDAFEIH@?7DimDock?$FLBOTTOM?$FN?5?$DN?5?7?$CFd?6@ 00417d04     SRBar.obj
+ 0002:00001d2c       ??_C@_0CA@MBJGCNMG@?7uState?5?5?5?5?5?5?5?5?5?5?$DN?5?7BOTTOM?5?5?$CFd?6@ 00417d2c     SRBar.obj
+ 0002:00001d54       ??_C@_0CA@GFLNMIEL@?7uState?5?5?5?5?5?5?5?5?5?5?$DN?5?7TOP?5?5?5?5?5?$CFd?6@ 00417d54     SRBar.obj
+ 0002:00001d7c       ??_C@_0CA@KPJGILL@?7uState?5?5?5?5?5?5?5?5?5?5?$DN?5?7LEFT?5?5?5?5?$CFd?6@ 00417d7c     SRBar.obj
+ 0002:00001da4       ??_C@_0CA@GIOGIBKP@?7uState?5?5?5?5?5?5?5?5?5?5?$DN?5?7RIGHT?5?5?5?$CFd?6@ 00417da4     SRBar.obj
+ 0002:00001dcc       ??_C@_0CA@KJNLANMB@?7uState?5?5?5?5?5?5?5?5?5?5?$DN?5?7FLOAT?5?5?5?$CFd?6@ 00417dcc     SRBar.obj
  0002:00001e00       __xmm@41f00000000000000000000000000000 00417e00     SRBar.obj
  0002:00001e14       ?szInvalidDateTime@ATL@@3QBDB 00417e14     StdAfx.obj
  0002:00001e18       ??_C@_0BB@KEKMKJPM@Invalid?5DateTime@ 00417e18     StdAfx.obj
@@ -1959,7 +1962,9 @@
  0004:0000059c       __imp_?GetProfileStringA@CWinApp@@UAE?AV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@PBD00@Z 0042359c     mfc140d:mfc140d.dll
  0004:000005a0       __imp_?GetThisMessageMap@CDialog@@KGPBUAFX_MSGMAP@@XZ 004235a0     mfc140d:mfc140d.dll
  0004:000005a4       __imp_?AfxWinMain@@YGHPAUHINSTANCE__@@0PADH@Z 004235a4     mfc140d:mfc140d.dll
- 0004:000005a8       \177mfc140d_NULL_THUNK_DATA 004235a8     mfc140d:mfc140d.dll
+ 0004:000005a8       __imp_?Append@?$CSimpleStringT@D$00@ATL@@QAEXABV12@@Z 004235a8     mfc140d:mfc140d.dll
+ 0004:000005ac       __imp_?Append@?$CSimpleStringT@D$00@ATL@@QAEXPBD@Z 004235ac     mfc140d:mfc140d.dll
+ 0004:000005b0       \177mfc140d_NULL_THUNK_DATA 004235b0     mfc140d:mfc140d.dll
  0004:00000674       __imp__OleInitialize@4     00423674     ole32:ole32.dll
  0004:00000678       \177ole32_NULL_THUNK_DATA  00423678     ole32:ole32.dll
  0004:000006a4       __imp__fopen               004236a4     ucrtd:ucrtbased.dll
@@ -2035,6 +2040,8 @@
  0002:fffea000       ?atlTraceString$initializer$@ATL@@3P6AXXZA 00400000     StdAfx.obj
  0000:fffdb000       __guard_fids_??__E_AtlBaseModule@ATL@@YAXXZ 00400000     atls:atlbase.obj
  0000:fffdb000       __guard_fids__             00400000     atls:atlbase.obj
+ 0000:fffd5000       .debug$S                   00400000     mfc140d:mfc140d.dll
+ 0000:fffd5000       .debug$S                   00400000     mfc140d:mfc140d.dll
  0000:fffd5000       .debug$S                   00400000     mfc140d:mfc140d.dll
  0000:fffd5000       .debug$S                   00400000     mfc140d:mfc140d.dll
  0000:fffd5000       .debug$S                   00400000     mfc140d:mfc140d.dll
@@ -2913,14 +2920,15 @@
  0001:00011e00       __unwindfunclet$?OnContextMenu@CSRBar@@IAEXPAVCWnd@@VCPoint@@@Z$0 00412e00 f   SRBar.obj
  0001:00011e0d       __ehhandler$?OnContextMenu@CSRBar@@IAEXPAVCWnd@@VCPoint@@@Z 00412e0d f   SRBar.obj
  0001:00011e40       __unwindfunclet$?OnExecute@CSRBar@@QAEXXZ$0 00412e40 f   SRBar.obj
- 0001:00011e49       __unwindfunclet$?OnExecute@CSRBar@@QAEXXZ$2 00412e49 f   SRBar.obj
- 0001:00011e57       __ehhandler$?OnExecute@CSRBar@@QAEXXZ 00412e57 f   SRBar.obj
+ 0001:00011e4e       __ehhandler$?OnExecute@CSRBar@@QAEXXZ 00412e4e f   SRBar.obj
  0001:00011e90       __unwindfunclet$?OnHelpUrl@@YGXPAUtagHELPINFO@@@Z$0 00412e90 f   SRBar.obj
  0001:00011e99       __unwindfunclet$?OnHelpUrl@@YGXPAUtagHELPINFO@@@Z$1 00412e99 f   SRBar.obj
  0001:00011ea7       __ehhandler$?OnHelpUrl@@YGXPAUtagHELPINFO@@@Z 00412ea7 f   SRBar.obj
  0001:00011ef0       __unwindfunclet$?OnShellExecuteCommand@CSRBar@@QAEXV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@@Z$0 00412ef0 f   SRBar.obj
  0001:00011ef9       __unwindfunclet$?OnShellExecuteCommand@CSRBar@@QAEXV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@@Z$1 00412ef9 f   SRBar.obj
- 0001:00011f07       __ehhandler$?OnShellExecuteCommand@CSRBar@@QAEXV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@@Z 00412f07 f   SRBar.obj
+ 0001:00011f02       __unwindfunclet$?OnShellExecuteCommand@CSRBar@@QAEXV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@@Z$3 00412f02 f   SRBar.obj
+ 0001:00011f0b       __unwindfunclet$?OnShellExecuteCommand@CSRBar@@QAEXV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@@Z$4 00412f0b f   SRBar.obj
+ 0001:00011f19       __ehhandler$?OnShellExecuteCommand@CSRBar@@QAEXV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@@Z 00412f19 f   SRBar.obj
  0001:00011f40       __unwindfunclet$??0_ATL_WIN_MODULE70@ATL@@QAE@XZ$0 00412f40 f   StdAfx.obj
  0001:00011f50       __ehhandler$??0_ATL_WIN_MODULE70@ATL@@QAE@XZ 00412f50 f   StdAfx.obj
  0001:00011f80       __ehhandler$??1?$CSimpleArray@GV?$CSimpleArrayEqualHelper@G@ATL@@@ATL@@QAE@XZ 00412f80 f   StdAfx.obj
@@ -2980,8 +2988,8 @@
  0002:00000ff0       ?messageMap@?1??GetThisMessageMap@CAppBar@@KGPBUAFX_MSGMAP@@XZ@4U3@B 00416ff0     AppBar.obj
  0002:000014c8       ?_messageEntries@?1??GetThisMessageMap@CShellRunApp@@KGPBUAFX_MSGMAP@@XZ@4QBUAFX_MSGMAP_ENTRY@@B 004174c8     ShellRun.obj
  0002:000014f8       ?messageMap@?1??GetThisMessageMap@CShellRunApp@@KGPBUAFX_MSGMAP@@XZ@4U3@B 004174f8     ShellRun.obj
- 0002:00001680       ?_messageEntries@?1??GetThisMessageMap@CSRBar@@KGPBUAFX_MSGMAP@@XZ@4QBUAFX_MSGMAP_ENTRY@@B 00417680     SRBar.obj
- 0002:00001770       ?messageMap@?1??GetThisMessageMap@CSRBar@@KGPBUAFX_MSGMAP@@XZ@4U3@B 00417770     SRBar.obj
+ 0002:00001698       ?_messageEntries@?1??GetThisMessageMap@CSRBar@@KGPBUAFX_MSGMAP@@XZ@4QBUAFX_MSGMAP_ENTRY@@B 00417698     SRBar.obj
+ 0002:00001788       ?messageMap@?1??GetThisMessageMap@CSRBar@@KGPBUAFX_MSGMAP@@XZ@4U3@B 00417788     SRBar.obj
  0002:00005a6c       _GS_ExceptionPointers      0041ba6c     msvcrtd:gs_report.obj
  0002:00005a78       ?_RTC_ErrorMessages@@3QBQBDB 0041ba78     msvcrtd:error.obj
  0002:00005a90       ?_RTC_NoFalsePositives@@3QBHB 0041ba90     msvcrtd:error.obj
@@ -3011,8 +3019,8 @@
  0002:00008024       __unwindtable$?OnContextMenu@CSRBar@@IAEXPAVCWnd@@VCPoint@@@Z 0041e024     SRBar.obj
  0002:0000802c       __ehfuncinfo$?OnContextMenu@CSRBar@@IAEXPAVCWnd@@VCPoint@@@Z 0041e02c     SRBar.obj
  0002:00008054       __unwindtable$?OnExecute@CSRBar@@QAEXXZ 0041e054     SRBar.obj
- 0002:00008064       __ehfuncinfo$?OnExecute@CSRBar@@QAEXXZ 0041e064     SRBar.obj
- 0002:00008090       __unwindtable$?OnShellExecuteCommand@CSRBar@@QAEXV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@@Z 0041e090     SRBar.obj
+ 0002:0000805c       __ehfuncinfo$?OnExecute@CSRBar@@QAEXXZ 0041e05c     SRBar.obj
+ 0002:00008080       __unwindtable$?OnShellExecuteCommand@CSRBar@@QAEXV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@@Z 0041e080     SRBar.obj
  0002:000080a0       __ehfuncinfo$?OnShellExecuteCommand@CSRBar@@QAEXV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@@Z 0041e0a0     SRBar.obj
  0002:000080cc       __unwindtable$?HelpUrl@@YGXXZ 0041e0cc     SRBar.obj
  0002:000080dc       __ehfuncinfo$?HelpUrl@@YGXXZ 0041e0dc     SRBar.obj
@@ -3066,14 +3074,10 @@
  0007:00000608       $R000198                   00427608     ShellRun.res
  0007:000006d8       $R000268                   004276d8     ShellRun.res
  0007:000006e0       $R000270                   004276e0     ShellRun.res
- 0007:000009c8       $R000558                   004279c8     ShellRun.res
- 0007:00000af0       $R000680                   00427af0     ShellRun.res
- 0007:00000b18       $R0006A8                   00427b18     ShellRun.res
- 0007:00000bb0       $R000740                   00427bb0     ShellRun.res
- 0007:00000f30       $R000AC0                   00427f30     ShellRun.res
- 0007:00000fc8       $R000B58                   00427fc8     ShellRun.res
-
- Exports
-
-  ordinal    name
-
+ 0007:00000778       $R000308                   00427778     ShellRun.res
+ 0007:00000790       $R000320                   00427790     ShellRun.res
+ 0007:00000a78       $R000608                   00427a78     ShellRun.res
+ 0007:00000ba0       $R000730                   00427ba0     ShellRun.res
+ 0007:00000bc8       $R000758                   00427bc8     ShellRun.res
+ 0007:00000f48       $R000AD8                   00427f48     ShellRun.res
+ 0007:00000fe0       $R000B70                   00427fe0     ShellRun.res

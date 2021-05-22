@@ -4,13 +4,13 @@ Written by:  Jeffrey Richter
 Purpose:     ShellRun class description file.
 ******************************************************************************/
 
-
 class CSRBar : public CAppBar {
 
 protected:  // Internal implementation state variables
    // CSRBar's class-specific constants
    static const TCHAR m_szAppName[];
    static const TCHAR m_szRegSubkey[];
+   static const TCHAR m_szAppLogFile[];
 
    CSize m_szExeBtnDims;   // The preferred size of the Execute button
    CSize m_szMinTracking;  // The minimum size of the client area
@@ -47,7 +47,8 @@ protected:
 	virtual BOOL OnInitDialog();
 	LONG RegistryOpenKeyEx(CAppBar::APPBARSTATE& abs);
 	LONG RegistryCreateKeyEx(CAppBar::APPBARSTATE& abs);
-	int FileWritePrefereces(CAppBar::APPBARSTATE& abs);
+	int LogToFile(const TCHAR fileName[], const TCHAR fileAccessMode[2], const TCHAR message[]);
+	int LogAppStateToFile(CAppBar::APPBARSTATE& abs, const char fileName[], const char fileAccessMode[2]);
 	afx_msg void OnContextMenu(CWnd* pWnd, CPoint point);
 	afx_msg void OnAppbarAboutAppBar();
 	afx_msg void OnAppbarAlwaysOnTop();
@@ -66,6 +67,7 @@ public:
 	afx_msg void CALLBACK OnAboutUrl();
 	afx_msg void CALLBACK OnShellExecuteUrl(LPHELPINFO lpHelpInfo);
 	afx_msg void OnShellExecuteCommand(CString sCommand);
+//	afx_msg void OnUpdate();
 };
 
 

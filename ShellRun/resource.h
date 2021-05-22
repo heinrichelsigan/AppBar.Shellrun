@@ -13,6 +13,7 @@
 #define IDC_BUTTON1                     1005
 #define IDC_CHECK1                      1006
 #define IDC_MFCLINK1                    1007
+#define IDC_ANIMATE1                    1008
 #define ID_APPBAR_ALWAYSONTOP           32771
 #define ID_APPBAR_AUTOHIDE              32772
 #define ID_APPBAR_ABOUTAPPBAR           32773
@@ -20,14 +21,14 @@
 #define ID_PLACEHOLDER_LPMMI            32775
 #define ID_PLACEHOLDER_LPMMI32776       32776
 
-#define URL_AUTOR						"https://www.linkedin.com/in/jeffrichter"
+#define URL_AUTOR "https://www.linkedin.com/in/jeffrichter/"
 // Next default values for new objects
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        138
+#define _APS_NEXT_RESOURCE_VALUE        139
 #define _APS_NEXT_COMMAND_VALUE         32777
-#define _APS_NEXT_CONTROL_VALUE         1008
+#define _APS_NEXT_CONTROL_VALUE         1009
 #define _APS_NEXT_SYMED_VALUE           101
 #endif
 #endif

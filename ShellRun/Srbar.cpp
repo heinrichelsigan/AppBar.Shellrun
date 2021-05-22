@@ -24,8 +24,9 @@ static char THIS_FILE[] = __FILE__;
 // Constant global variables
 
 
-const TCHAR CSRBar::m_szAppName[]   = __TEXT("Shell Run");
+const TCHAR CSRBar::m_szAppName[]   = __TEXT("AppBar ShellRun");
 const TCHAR CSRBar::m_szRegSubkey[] = __TEXT("Software\\Richter");
+const TCHAR CSRBar::m_szAppLogFile[] = __TEXT("AppBar_ShellRun.log");
 
 /////////////////////////////////////////////////////////////////////////////
 // Public member functions
@@ -94,6 +95,7 @@ BEGIN_MESSAGE_MAP(CSRBar, CAppBar)
 	ON_WM_GETMINMAXINFO()
 	ON_WM_SYSCOMMAND()
 	//}}AFX_MSG_MAP
+//	ON_EN_UPDATE(IDC_COMMAND, &CSRBar::OnUpdate)
 END_MESSAGE_MAP()
 
 
@@ -151,7 +153,7 @@ BOOL CSRBar::OnInitDialog() {
 	int fileStatus = 0;
 
 	regStatus = RegistryOpenKeyEx(abs);
-	fileStatus = FileWritePrefereces(abs);
+	fileStatus = LogAppStateToFile(abs, m_szAppLogFile, "a");
 	if (fileStatus < 0 && regStatus < 0) {
 		MessageBox(__TEXT("Failed to store preferences in registry and in file"),
 			m_szAppName, MB_ICONERROR | MB_OK);
@@ -366,7 +368,7 @@ void CALLBACK HelpUrl() {
 	const TCHAR cx_szAppName[] = __TEXT("Shell Run by Jeffrey Richters");
 	const TCHAR yx_szAppName[] = __TEXT("Command failed to execute");
 	HWND cx_hWnd;
-	CString sCommand = URL_AUTOR;
+	CString sCommand = __TEXT(URL_AUTOR);
 
 	// Parse out the Command
 	int nCmdLen = sCommand.Find(__TEXT(' '));
@@ -395,7 +397,7 @@ void CALLBACK OnHelpUrl(LPHELPINFO lpHelpInfo) {
 	const TCHAR cx_szAppName[] = __TEXT("Shell Run by Jeffrey Richters");
 	const TCHAR yx_szAppName[] = __TEXT("Command failed to execute");
 	HWND cx_hWnd;
-	CString sCommand = URL_AUTOR;
+	CString sCommand = __TEXT(URL_AUTOR);
 
 	// Parse out the Command
 	int nCmdLen = sCommand.Find(__TEXT(' '));
@@ -439,6 +441,25 @@ void CSRBar::OnAppbarExit() {
 
 /////////////////////////////////////////////////////////////////////////////
 
+
+void CALLBACK CSRBar::OnShellExecuteUrl(LPHELPINFO lpHelpInfo) {
+
+	OnShellExecuteCommand(__TEXT(URL_AUTOR));
+}
+
+
+void CALLBACK CSRBar::OnAboutUrl() {
+
+	OnShellExecuteCommand(__TEXT(URL_AUTOR));
+}
+
+
+//void CSRBar::OnUpdate()
+//{
+//	// TODO:  Fügen Sie hier Ihren Handlercode für Benachrichtigungen des Steuerelements ein.
+//	OnExecute();
+//}
+
 /// <summary>
 /// OnExecute fired when appbar OnExecute command occurs
 /// </summary>
@@ -449,51 +470,14 @@ void CSRBar::OnExecute() {
    m_edtCommand.GetWindowText(sCommand);
    OnShellExecuteCommand(sCommand);
 
-
-   // Parse out the Command
-	int nCmdLen = sCommand.Find(__TEXT(' '));
-	if (nCmdLen == -1) {
-		nCmdLen = sCommand.GetLength();
-	}
-
-   // Parse out the parameters to pass to the Command
-   CString sParams = sCommand.Mid(nCmdLen);
-	sParams.TrimLeft();  // Remove extra white space
-
-   // Have the Shell run our command with its parameters
-   HINSTANCE hinst = ::ShellExecute(m_hWnd, NULL, 
-      sCommand.Left(nCmdLen), sParams, NULL, SW_SHOWNORMAL);
-
-   if (hinst < (HINSTANCE) HINSTANCE_ERROR) {
-      // If the command failed to run, tell the user.
-      MessageBox(__TEXT("Command failed to execute"), 
-         m_szAppName, MB_ICONSTOP | MB_OK);
-   }
 }
-
-void CALLBACK CSRBar::OnShellExecuteUrl(LPHELPINFO lpHelpInfo) {
-
-	OnShellExecuteCommand(URL_AUTOR);
-}
-
-
-void CALLBACK CSRBar::OnAboutUrl() {
-
-	OnShellExecuteCommand(URL_AUTOR);
-}
-
-
-
-
-
 
 
 /// <summary>
 /// OnShellExecuteCommand fired when appbar OnExecute command occurs
 /// </summary>
-/// <param name="sCommand"></param>
+/// <param name="sCommand">command to execute in shell as new process</param>
 void CSRBar::OnShellExecuteCommand(CString sCommand) {
-
 
 	// Parse out the Command
 	int nCmdLen = sCommand.Find(__TEXT(' '));
@@ -511,8 +495,11 @@ void CSRBar::OnShellExecuteCommand(CString sCommand) {
 
 	if (hinst < (HINSTANCE)HINSTANCE_ERROR) {
 		// If the command failed to run, tell the user.
-		MessageBox(__TEXT("Command failed to execute"),
-			m_szAppName, MB_ICONSTOP | MB_OK);
+		CString msg = "Command \""; 
+		msg.Append(sCommand.Left(nCmdLen));
+		msg.Append("\" failed to execute!\n");
+
+		MessageBox(msg, m_szAppName, MB_ICONSTOP | MB_OK);
 	}
 }
 
@@ -522,14 +509,14 @@ void CSRBar::OnShellExecuteCommand(CString sCommand) {
 /// </summary>
 /// <param name="abs">appbar with state</param>
 /// <returns>0 on success,  -1 on error</returns>
-int CSRBar::FileWritePrefereces(CAppBar::APPBARSTATE& abs)
+int CSRBar::LogAppStateToFile(CAppBar::APPBARSTATE& abs, const TCHAR fileName[], const TCHAR fileAccessMode[2])
 {
+	TCHAR errorMsg[256];
 	FILE* fp;
-	fp = fopen("shell.txt", "w");
-	int cwrit = 0;
+	fp = fopen(fileName, fileAccessMode);
 	if (fp == NULL) {
-		MessageBox(__TEXT("File shell.txt failed to open for writing"),
-			m_szAppName, MB_ICONSTOP | MB_OK);
+		sprintf(errorMsg, "Error opening file \'%s\' for operation \"%s\"\n\0", fileName, fileAccessMode);
+		MessageBox(errorMsg, m_szAppName, MB_ICONSTOP | MB_OK);
 		return -1;
 	}
 
@@ -578,6 +565,25 @@ int CSRBar::FileWritePrefereces(CAppBar::APPBARSTATE& abs)
 
 	return 0;
 }
+
+int CSRBar::LogToFile(const TCHAR fileName[], const TCHAR fileAccessMode[2], const TCHAR message[])
+{
+	TCHAR errorMsg[256];
+	FILE* fp;
+	fp = fopen(fileName, fileAccessMode);
+	if (fp == NULL) {
+		sprintf(errorMsg, "Error opening file \'%s\' for operation \"%s\"\n\0", fileName, fileAccessMode);
+		MessageBox(errorMsg, m_szAppName, MB_ICONSTOP | MB_OK);
+		return -1;
+	}
+
+	(void)fprintf(fp, message);
+	(void)fflush(fp);
+	(void)fclose(fp);
+
+	return 0;
+}
+
 
 /// <summary>
 /// Query preferences of AppBar to registry under
@@ -639,5 +645,4 @@ LONG CSRBar::RegistryCreateKeyEx(CAppBar::APPBARSTATE& abs)
 
 
 //////////////////////////////// End of File //////////////////////////////////
-
 

@@ -16,3 +16,12 @@ Starting Software\Richter...
 On Changing 1:
 1680 x 55
 ( 0 , 955 , 1680 , 1010 )
+On Changing 2:
+1680 x 137
+( 0 , 873 , 1680 , 1010 )
+On Changing 3:
+1680 x 14
+( 0 , 996 , 1680 , 1010 )
+On Changing 4:
+1680 x 55
+( 0 , 955 , 1680 , 1010 )
