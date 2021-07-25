@@ -1,3 +1,1 @@
-C:\Users\heinr\source\ShellRun\shellsave\WinDebug\ShellRun.exe
-C:\Users\heinr\source\repos\AppBar\ShellRun\WinDebug\ShellRun.exe
 C:\Users\Norbert Elsigan\source\repos\AppBar.Shellrun\ShellRun\WinDebug\ShellRun.exe

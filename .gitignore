@@ -362,3 +362,12 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 ShellRun/WinDebug/ShellRun.tlog
+ShellRun/WinDebug/AppBar.obj
+ShellRun/WinDebug/AppBar.sbr
+ShellRun/WinDebug/ShellRun.obj
+ShellRun/WinDebug/ShellRun.sbr
+ShellRun/WinDebug/SRBar.sbr
+ShellRun/WinDebug/SRBar.obj
+ShellRun/WinDebug/SRBar.sbr
+ShellRun/WinDebug/StdAfx.obj
+ShellRun/WinDebug/StdAfx.sbr
