@@ -176,6 +176,12 @@
   <ItemGroup>
     <Image Include="ShellRun.ico" />
   </ItemGroup>
+    <ItemGroup>
+    <None Include=".gitignore" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="WinDebug\.gitignore" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

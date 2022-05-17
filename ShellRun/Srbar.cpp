@@ -75,7 +75,7 @@ void CSRBar::DoDataExchange(CDataExchange* pDX) {
 	CAppBar::DoDataExchange(pDX);
 	//{{AFX_DATA_MAP(CSRBar)
 	DDX_Control(pDX, IDC_EXECUTE, m_btnExecute);
-	DDX_Control(pDX, IDC_COMMAND, m_edtCommand);
+	DDX_Control(pDX, IDC_COMMAND, m_edtCommand);	
 	//}}AFX_DATA_MAP
 }
 

@@ -3,6 +3,27 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
+
+./ShellRun/WinDebug
+ShellRun/WinDebug
+./ShellRun/WinDebug
+./ShellRun/WinDebug/ShellRun.tlog
+ShellRun/WinDebug/ShellRun.tlog
+ShellRun/WinDebug/*.log
+./ShellRun/WinDebug/*.log
+*.obj
+*.pdb
+*.pch
+*.sbr
+*.idp
+*.bsc
+*.ilk
+*.map
+*.exe
+*.exe.recipe
+Shellrun.vcxproj.*.*
+
+
 # User-specific files
 *.rsuser
 *.suo
