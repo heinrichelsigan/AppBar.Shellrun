@@ -55,4 +55,8 @@
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>
+  <ItemGroup>
+    <None Include=".gitignore" />
+    <None Include="WinDebug\.gitignore" />
+  </ItemGroup>
 </Project>
