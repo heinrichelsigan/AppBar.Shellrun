@@ -1,6 +1,6 @@
 //{{NO_DEPENDENCIES}}
-// Von Microsoft Visual C++ generierte Includedatei.
-// Verwendet durch ShellRun.rc
+// Microsoft Visual C++ generated include file.
+// Used by ShellRun.rc
 //
 #define IDCANCEL2                       3
 #define IDD_PROPPAGE_SMALL              102
@@ -14,6 +14,7 @@
 #define IDC_CHECK1                      1006
 #define IDC_MFCLINK1                    1007
 #define IDC_ANIMATE1                    1008
+#define IDC_COMBO1                      1009
 #define ID_APPBAR_ALWAYSONTOP           32771
 #define ID_APPBAR_AUTOHIDE              32772
 #define ID_APPBAR_ABOUTAPPBAR           32773
@@ -28,7 +29,7 @@
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_NEXT_RESOURCE_VALUE        139
 #define _APS_NEXT_COMMAND_VALUE         32777
-#define _APS_NEXT_CONTROL_VALUE         1009
+#define _APS_NEXT_CONTROL_VALUE         1010
 #define _APS_NEXT_SYMED_VALUE           101
 #endif
 #endif

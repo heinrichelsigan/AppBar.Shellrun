@@ -27,6 +27,9 @@ static char THIS_FILE[] = __FILE__;
 const TCHAR CSRBar::m_szAppName[]   = __TEXT("AppBar ShellRun");
 const TCHAR CSRBar::m_szRegSubkey[] = __TEXT("Software\\Richter");
 const TCHAR CSRBar::m_szAppLogFile[] = __TEXT("AppBar_ShellRun.log");
+const TCHAR CSRBar::m_szAppHistoryFile[] = __TEXT("AppBar_ShellRun_History.txt");
+
+CString m_cStrCmds[256];
 
 /////////////////////////////////////////////////////////////////////////////
 // Public member functions
@@ -76,6 +79,7 @@ void CSRBar::DoDataExchange(CDataExchange* pDX) {
 	//{{AFX_DATA_MAP(CSRBar)
 	DDX_Control(pDX, IDC_EXECUTE, m_btnExecute);
 	DDX_Control(pDX, IDC_COMMAND, m_edtCommand);	
+	DDX_Control(pDX, IDC_COMBO1, m_comboBox);
 	//}}AFX_DATA_MAP
 }
 
@@ -91,11 +95,14 @@ BEGIN_MESSAGE_MAP(CSRBar, CAppBar)
 	ON_COMMAND(ID_APPBAR_AUTOHIDE, OnAutoHide)
 	ON_COMMAND(ID_APPBAR_EXIT, OnAppbarExit)
 	ON_BN_CLICKED(IDC_EXECUTE, OnExecute)
+	// ON_EN_UPDATE(IDC_COMMAND, OnTextBoxUpdate)
+	// ON_EN_UPDATE(IDC_COMBO1, OnComboBoxEditUpdate)
+	// ON_CLBN_CHKCHANGE(IDC_COMBO1, OnComboBoxUpdate)
+	ON_CBN_EDITUPDATE(IDC_COMBO1, OnComboBoxEditUpdate)
 	ON_WM_SIZE()
 	ON_WM_GETMINMAXINFO()
 	ON_WM_SYSCOMMAND()
 	//}}AFX_MSG_MAP
-//	ON_EN_UPDATE(IDC_COMMAND, &CSRBar::OnUpdate)
 END_MESSAGE_MAP()
 
 
@@ -214,8 +221,11 @@ void CSRBar::OnGetMinMaxInfo(MINMAXINFO FAR* lpMMI) {
 /// <param name="cy"></param>
 void CSRBar::OnSize(UINT nType, int cx, int cy) {
 
-	
 	CAppBar::OnSize(nType, cx, cy);
+	int cxHalf = (int)(cx / 2);
+	int cyHalf = (int)(cy / 2);	
+	int cxCombo = cxHalf + 1;
+	int cxLen = cxHalf;
 
    if (::IsWindow(m_edtCommand.m_hWnd)) {
    	   if (IsEdgeLeftOrRight(GetState())) {
@@ -226,16 +236,21 @@ void CSRBar::OnSize(UINT nType, int cx, int cy) {
          
 		 y += m_szExeBtnDims.cy + m_szExeBtnDims.cy / 4;
          
-		 m_edtCommand.SetWindowPos(NULL, 0, y, cx, cy - y, SWP_NOZORDER);
+		 m_edtCommand.SetWindowPos(NULL, 0, y, cxLen, cy - y, SWP_NOZORDER);
 		
       } else { 
-	     int x = 0;
+	     int x = 0;		 
          m_btnExecute.SetWindowPos(NULL, x, (cy - m_szExeBtnDims.cy) / 2, 
             m_szExeBtnDims.cx, m_szExeBtnDims.cy, SWP_NOZORDER);
 
          x += m_szExeBtnDims.cx + GetSystemMetrics(SM_CXVSCROLL);
+		 
+		 cxLen = cxHalf - x;
+		 m_edtCommand.SetWindowPos(NULL, x, 0, cxLen, cy, SWP_NOZORDER);
 
-         m_edtCommand.SetWindowPos(NULL, x, 0, cx - x, cy, SWP_NOZORDER);
+		 cxCombo = max((cxHalf + 1), (x + cxLen + 1));
+		 cxLen = cx - cxCombo;         
+		 m_comboBox.SetWindowPos(NULL, cxCombo, 0, cxLen, cy, SWP_NOZORDER);
       }
    }
 }
@@ -454,11 +469,77 @@ void CALLBACK CSRBar::OnAboutUrl() {
 }
 
 
-//void CSRBar::OnUpdate()
-//{
-//	// TODO:  Fügen Sie hier Ihren Handlercode für Benachrichtigungen des Steuerelements ein.
-//	OnExecute();
-//}
+void CSRBar::OnTextBoxUpdate() {
+	// TODO:  Fügen Sie hier Ihren Handlercode für Benachrichtigungen des Steuerelements ein.
+	OnExecute();
+}
+
+void CSRBar::OnComboBoxUpdate() {
+	// TODO:  Fügen Sie hier Ihren Handlercode für Benachrichtigungen des Steuerelements ein.
+	CString sCmd;
+	m_comboBox.GetWindowText(sCmd);
+	OnComboBoxEditUpdate();
+}
+
+void CSRBar::OnComboBoxEditUpdate() {
+	// TODO:  Fügen Sie hier Ihren Handlercode für Benachrichtigungen des Steuerelements ein.
+	CString sCmd;
+	CString cStr;
+	int noBoxAddFlag = 0;
+	int sCnt = 0;
+	int cStrLen = 0;
+	int sCmdLen = 0;
+	TCHAR tCmd[256];
+
+	m_comboBox.GetWindowText(sCmd);
+	sCmdLen = sCmd.GetLength();
+	if (sCmdLen < 2)
+		return;
+
+	for (sCnt = 0; sCnt < sCmdLen; sCnt++) {
+		tCmd[sCnt] = sCmd.GetAt(sCnt);
+	}
+	tCmd[++sCnt] = '\0';
+	tCmd[sCmd.GetLength()] = '\0';
+
+	cStr = ReadFromHistoryFile(m_szAppHistoryFile, tCmd);
+	if (cStr.IsEmpty())
+		return;
+
+	if (cStr.GetLength() > 2) {
+
+		cStr.Remove('\n');
+
+		for (sCnt = 0; (!noBoxAddFlag && (sCnt < 256)); sCnt++) {
+			CString cS = m_cStrCmds[sCnt];
+
+			if (!cS.IsEmpty() && (cS.GetLength() == cStr.GetLength()) && (cS.Compare(cStr) == 0)) {
+				noBoxAddFlag = 1;
+				break;
+			}
+		}
+		if (!noBoxAddFlag) {
+			m_comboBox.AddString(cStr);
+
+			for (sCnt = 0; (!noBoxAddFlag && (sCnt < 256)); sCnt++) {
+				CString cSt = m_cStrCmds[sCnt];
+				if (!cSt.IsEmpty() || cSt.GetLength() > 1) {
+					continue;
+				} else {
+					cSt = cStr;
+					m_cStrCmds[sCnt] = cStr;
+					noBoxAddFlag = 1;
+					break;
+				}
+			}
+		}
+
+		if (cStr.Compare(sCmd) == 0) {
+			OnShellExecuteCommand(sCmd);
+		}
+	}
+
+}
 
 /// <summary>
 /// OnExecute fired when appbar OnExecute command occurs
@@ -489,17 +570,28 @@ void CSRBar::OnShellExecuteCommand(CString sCommand) {
 	CString sParams = sCommand.Mid(nCmdLen);
 	sParams.TrimLeft();  // Remove extra white space
 
-   // Have the Shell run our command with its parameters
+	// Have the Shell run our command with its parameters
 	HINSTANCE hinst = ::ShellExecute(m_hWnd, NULL,
 		sCommand.Left(nCmdLen), sParams, NULL, SW_SHOWNORMAL);
 
 	if (hinst < (HINSTANCE)HINSTANCE_ERROR) {
 		// If the command failed to run, tell the user.
-		CString msg = "Command \""; 
+		CString msg = "Command \"";
 		msg.Append(sCommand.Left(nCmdLen));
 		msg.Append("\" failed to execute!\n");
 
 		MessageBox(msg, m_szAppName, MB_ICONSTOP | MB_OK);
+	}
+	else {
+		TCHAR tmsg[256];
+		int scnt = 0;
+		for (scnt = 0; scnt < sCommand.GetLength(); scnt++) {
+			tmsg[scnt] = (TCHAR)sCommand.GetAt(scnt);
+		}
+		tmsg[sCommand.GetLength()] = '\0';
+		LogToFile(m_szAppHistoryFile, "a", tmsg);
+		// LPCTSTRI lstr = "";
+		m_edtCommand.SetWindowTextA("");
 	}
 }
 
@@ -577,11 +669,44 @@ int CSRBar::LogToFile(const TCHAR fileName[], const TCHAR fileAccessMode[2], con
 		return -1;
 	}
 
-	(void)fprintf(fp, message);
+	(void)fprintf(fp, "%s\n", message);
 	(void)fflush(fp);
 	(void)fclose(fp);
 
 	return 0;
+}
+
+
+CString CSRBar::ReadFromHistoryFile(const TCHAR fileName[], const TCHAR message[])
+{
+	int finishFlag = 0, sCnt = 0;
+	CString cStr = "";
+	TCHAR errMsg[256], bufferMsg[256], result[256];
+	FILE* fp;
+	fp = fopen(fileName, "r");
+	if (fp == NULL) {
+		sprintf(errMsg, "Error opening file \'%s\' for reading!\n\0", fileName);
+		MessageBox(errMsg, m_szAppName, MB_ICONSTOP | MB_OK);
+		return cStr;
+	}
+
+	while (!finishFlag && ((fgets(bufferMsg, 256, fp)) != NULL)) {
+		if (strstr(bufferMsg, message)) {
+			sprintf(result, "%s\0", bufferMsg);
+			++finishFlag;
+			break;
+		}
+	}
+	(void)fclose(fp);
+
+	if (finishFlag > 0) {
+		for (sCnt = 0; (sCnt < 256 && result[sCnt] != '\0'); sCnt++) {
+			cStr.AppendChar(result[sCnt]);
+		}
+		cStr.AppendChar('\0');
+	}
+
+	return cStr;
 }
 
 
