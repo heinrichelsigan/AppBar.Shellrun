@@ -239,7 +239,6 @@ BEGIN
         MENUITEM "Always on top",               ID_APPBAR_ALWAYSONTOP
         MENUITEM "AutoHide",                    ID_APPBAR_AUTOHIDE
         MENUITEM SEPARATOR
-        MENUITEM "New",                         ID_WINDOW_SPLIT
         MENUITEM "About ShellRun",              ID_APPBAR_ABOUTAPPBAR
         MENUITEM "Exit",                        ID_APPBAR_EXIT
     END
