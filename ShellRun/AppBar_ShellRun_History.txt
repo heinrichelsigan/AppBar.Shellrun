@@ -1,0 +1,11 @@
+procexp64
+autoruns64
+regedt32
+TcpView64
+https://area23.at/s/
+https://www.linkedin.com/in/jeffrichter/
+winver
+notepad
+explorer
+calc
+cmd

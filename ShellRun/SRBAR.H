@@ -11,6 +11,9 @@ protected:  // Internal implementation state variables
    static const TCHAR m_szAppName[];
    static const TCHAR m_szRegSubkey[];
    static const TCHAR m_szAppLogFile[];
+   static const TCHAR m_szAppHistoryFile[];
+
+   CString m_cStrCmds[256];
 
    CSize m_szExeBtnDims;   // The preferred size of the Execute button
    CSize m_szMinTracking;  // The minimum size of the client area
@@ -29,6 +32,7 @@ protected:  // Overridable functions
 	enum { IDD = IDD_SHELLRUN };
 	CButton	m_btnExecute;
 	CEdit	m_edtCommand;
+	CComboBox m_comboBox;
 	//}}AFX_DATA
 
 
@@ -49,6 +53,7 @@ protected:
 	LONG RegistryCreateKeyEx(CAppBar::APPBARSTATE& abs);
 	int LogToFile(const TCHAR fileName[], const TCHAR fileAccessMode[2], const TCHAR message[]);
 	int LogAppStateToFile(CAppBar::APPBARSTATE& abs, const char fileName[], const char fileAccessMode[2]);
+	CString ReadFromHistoryFile(const TCHAR fileName[], const TCHAR message[]);
 	afx_msg void OnContextMenu(CWnd* pWnd, CPoint point);
 	afx_msg void OnAppbarAboutAppBar();
 	afx_msg void OnAppbarAlwaysOnTop();
@@ -67,7 +72,9 @@ public:
 	afx_msg void CALLBACK OnAboutUrl();
 	afx_msg void CALLBACK OnShellExecuteUrl(LPHELPINFO lpHelpInfo);
 	afx_msg void OnShellExecuteCommand(CString sCommand);
-//	afx_msg void OnUpdate();
+	afx_msg void OnTextBoxUpdate();
+	afx_msg void OnComboBoxUpdate();
+	afx_msg void OnComboBoxEditUpdate();
 };
 
 
